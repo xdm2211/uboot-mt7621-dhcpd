@@ -81,6 +81,7 @@ fi
 
 if [ "$5" -ge 0 -a "$5" -le 48 ]; then
 	echo "set system led pin: $5"
+	echo "CONFIG_MT7621_LED_STATUS1_ENABLE=y" >> ${DEFCONFIG}
 	echo "CONFIG_MT7621_LED_STATUS1=$5" >> ${DEFCONFIG}
 else
 	echo "System LED is disabled!"

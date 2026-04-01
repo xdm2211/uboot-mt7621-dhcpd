@@ -27,9 +27,16 @@ config MT7621_BUTTON_RESET
 	help
 	  GPIO number of reset button used by failsafe logic.
 
+config MT7621_LED_STATUS1_ENABLE
+	bool "Enable status LED"
+	default n
+	help
+	  Enable status LED GPIO control. Disable to omit LED support.
+
 config MT7621_LED_STATUS1
 	int "Status LED GPIO"
 	range 0 48
+	depends on MT7621_LED_STATUS1_ENABLE
 	help
 	  GPIO number of status LED used by board init/failsafe indication.
 
